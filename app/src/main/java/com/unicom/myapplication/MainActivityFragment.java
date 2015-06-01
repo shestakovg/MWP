@@ -1,12 +1,14 @@
 package com.unicom.myapplication;
 
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-
+import android.widget.Button;
 
 
 /**
@@ -14,6 +16,9 @@ import android.view.ViewGroup;
  */
 public class MainActivityFragment extends Fragment {
     private View parentView ;
+    Button btnSetup;
+    Button btnBeginWork;
+
     public MainActivityFragment() {
     }
 
@@ -21,7 +26,37 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         parentView = inflater.inflate(R.layout.fragment_main, container, false);
-
+        btnSetup = (Button) parentView.findViewById(R.id.btnSetup);
+        btnSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnSetupClick(v);
+            }
+        });
+        btnBeginWork = (Button) parentView.findViewById(R.id.btnBeginWork);
+        btnSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnBeginWork(v);
+            }
+        });
         return parentView;
     }
+
+    private void btnSetupClick(View v)
+    {
+        Intent intent = new Intent(getActivity(), SetupActivity.class);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.putExtra("w", selectedValue);
+        startActivity(intent);
+    }
+
+    private void btnBeginWork(View v)
+    {
+        Intent intent = new Intent(getActivity(), ActivityRoute.class);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.putExtra("w", selectedValue);
+        startActivity(intent);
+    }
+
 }

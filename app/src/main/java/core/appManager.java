@@ -11,12 +11,13 @@ import db.DbOpenHelper;
 public class appManager {
     private static appManager ourInstance ; //= new appManager();
 
-    private AppSettings appSetupInstance ;
+    public AppSettings appSetupInstance ;
     public static appManager getOurInstance() {
         if (ourInstance == null)
         {
-            // Create the instance
-            ourInstance = new appManager();
+//            Exception ex = new Exception("appManager not exist");
+//
+//            throw ex;
         }
         return ourInstance;
     }
@@ -50,23 +51,20 @@ public class appManager {
     }
 
     private appManager(Context context) {
-        this.appSetupInstance = new AppSettings();
         this.currentContext = context;
+        this.appSetupInstance = new AppSettings();
         loadSettingsFromDb();
     }
     private void loadSettingsFromDb()
     {
-        DbOpenHelper dbOpenHelper = new DbOpenHelper(this.currentContext);
-        SQLiteDatabase db= dbOpenHelper.getReadableDatabase();
-
-        db.close();
+        this.appSetupInstance.readSetup(getCurrentContext());
     }
-    public static void initInstance()
-    {
-        if (ourInstance == null)
-        {
-            // Create the instance
-            ourInstance = new appManager();
-        }
-    }
+//    public static void initInstance()
+//    {
+//        if (ourInstance == null)
+//        {
+//            // Create the instance
+//            ourInstance = new appManager();
+//        }
+//    }
 }

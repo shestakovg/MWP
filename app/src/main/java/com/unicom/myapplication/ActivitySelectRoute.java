@@ -1,43 +1,24 @@
 package com.unicom.myapplication;
 
-import android.app.Application;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-//import core.MyApplication;
-import core.appManager;
+import com.unicom.myapplication.R;
 
-
-public class MainActivity extends ActionBarActivity {
+public class ActivitySelectRoute extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        appManager.getOurInstance(this);
+        setContentView(R.layout.activity_activity_select_route);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        Application app = (Application) getApplication();
-        appManager.getOurInstance(this);
-
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction ft = fragmentManager.beginTransaction();
-        // Создаем и добавляем первый фрагмент
-        MainActivityFragment mainFrag = new MainActivityFragment();
-        ft.add(R.id.container, mainFrag, "mainFragment");
-        ft.addToBackStack(null);
-        // Подтверждаем операцию
-        ft.commit();
+        getMenuInflater().inflate(R.menu.menu_activity_select_route, menu);
         return true;
     }
 

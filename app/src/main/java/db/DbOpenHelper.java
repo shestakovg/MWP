@@ -27,7 +27,7 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         } catch (SQLException e) {
             Log.e(this.getClass().toString(), "Error while checking db");
         }
-        //Ардроид не любит утечки ресурсов, все должно закрываться
+
         if (checkDb != null) {
             checkDb.close();
         }
@@ -58,6 +58,7 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         this.dbSettings = DbSettings.getInstance();
         String packageName = context.getPackageName();
         this.dbSettings.DB_PATH = String.format("//data//data//%s//databases//", packageName);
+        createDataBase();
     }
 
     @Override

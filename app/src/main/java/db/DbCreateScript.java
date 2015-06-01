@@ -26,10 +26,10 @@ public class DbCreateScript {
  //Drop table
     private static String DROP_BASEPARAMS = "DROP TABLE IF EXISTS baseParams";
 
-    public static String[] getDropTableScripts()
+    public static ArrayList<String>  getDropTableScripts()
     {
         ArrayList<String> list = new ArrayList<String>();
         list.add(DROP_BASEPARAMS);
-        return (String[])list.toArray();
+        return list;
     }
 }

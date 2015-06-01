@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SetupActivity"
+            android:label="@string/title_activity_setup" >
+        </activity>
+        <activity
+            android:name=".ActivityRoute"
+            android:label="@string/title_activity_activity_route" >
+        </activity>
+        <activity
+            android:name=".ActivitySelectRoute"
+            android:label="@string/title_activity_activity_select_route" >
+        </activity>
     </application>
 
 </manifest>

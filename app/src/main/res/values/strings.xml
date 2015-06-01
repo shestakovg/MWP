@@ -2,4 +2,9 @@
     <string name="app_name">Мобильная торговля</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Настройки</string>
+    <string name="title_activity_setup">Настройки</string>
+    <string name="unknown_route">Неизвестный маршрут</string>
+    <string name="unknown_employee">Неизвестный сотрудник</string>
+    <string name="title_activity_activity_route">Маршрут</string>
+    <string name="title_activity_activity_select_route">ActivitySelectRoute</string>
 </resources>
