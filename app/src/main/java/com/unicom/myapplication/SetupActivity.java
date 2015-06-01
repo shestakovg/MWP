@@ -1,5 +1,6 @@
 package com.unicom.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,11 +26,20 @@ public class SetupActivity extends ActionBarActivity {
         txtServiceLink.setText(m_appManager.appSetupInstance.getServiceUrl());
         txtRouteName = (EditText) findViewById(R.id.editTextRouteName);
         txtEmployeeName  = (EditText) findViewById(R.id.editTextEmployeeName);
+        refreshSetup();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        refreshSetup();
+    }
+
+    private void refreshSetup()
+    {
         txtEmployeeName.setText(m_appManager.appSetupInstance.getEmployeeName());
         txtRouteName.setText(m_appManager.appSetupInstance.getRouteName());
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,5 +72,14 @@ public class SetupActivity extends ActionBarActivity {
         m_appManager.appSetupInstance.setEmployeeName(txtEmployeeName.getText().toString());
         m_appManager.appSetupInstance.saveSetup(this);
         m_appManager.appSetupInstance.readSetup(this);
+    }
+
+    public void onClickSelectRoute(View v)
+    {
+        Intent intent = new Intent(this, ActivitySelectRoute.class);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.putExtra("w", selectedValue);
+        startActivity(intent);
+        refreshSetup();
     }
 }

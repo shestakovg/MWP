@@ -34,7 +34,7 @@ public class MainActivityFragment extends Fragment {
             }
         });
         btnBeginWork = (Button) parentView.findViewById(R.id.btnBeginWork);
-        btnSetup.setOnClickListener(new View.OnClickListener() {
+        btnBeginWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 btnBeginWork(v);

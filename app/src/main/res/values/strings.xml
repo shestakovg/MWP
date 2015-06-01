@@ -6,5 +6,6 @@
     <string name="unknown_route">Неизвестный маршрут</string>
     <string name="unknown_employee">Неизвестный сотрудник</string>
     <string name="title_activity_activity_route">Маршрут</string>
-    <string name="title_activity_activity_select_route">ActivitySelectRoute</string>
+    <string name="title_activity_activity_select_route">Выбор маршрута</string>
+    <string name="no_connection">Нет связи с сервером</string>
 </resources>
