@@ -1,8 +1,6 @@
 package com.unicom.myapplication;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +15,7 @@ import android.widget.Button;
 public class MainActivityFragment extends Fragment {
     private View parentView ;
     Button btnSetup;
+    Button btnSyncServer;
     Button btnBeginWork;
 
     public MainActivityFragment() {
@@ -40,6 +39,13 @@ public class MainActivityFragment extends Fragment {
                 btnBeginWork(v);
             }
         });
+        btnSyncServer = (Button) parentView.findViewById(R.id.btnSyncServer);
+        btnSyncServer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnSyncServer(v);
+            }
+        });
         return parentView;
     }
 
@@ -54,6 +60,14 @@ public class MainActivityFragment extends Fragment {
     private void btnBeginWork(View v)
     {
         Intent intent = new Intent(getActivity(), ActivityRoute.class);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.putExtra("w", selectedValue);
+        startActivity(intent);
+    }
+
+    private void btnSyncServer(View v)
+    {
+        Intent intent = new Intent(getActivity(), ActivitySync.class);
         //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         //intent.putExtra("w", selectedValue);
         startActivity(intent);

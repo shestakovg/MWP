@@ -15,4 +15,6 @@ public class OutletObject {
     public UUID priceId;
     public String priceName;
     public String outletAddress;
+    public UUID partnerId;
+    public String partnerName;
 }

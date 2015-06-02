@@ -72,6 +72,7 @@ public class SetupActivity extends ActionBarActivity {
         m_appManager.appSetupInstance.setEmployeeName(txtEmployeeName.getText().toString());
         m_appManager.appSetupInstance.saveSetup(this);
         m_appManager.appSetupInstance.readSetup(this);
+        finish();
     }
 
     public void onClickSelectRoute(View v)

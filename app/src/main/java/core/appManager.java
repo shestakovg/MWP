@@ -3,6 +3,7 @@ package core;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import Entitys.OutletObject;
 import db.DbOpenHelper;
 
 /**
@@ -45,6 +46,15 @@ public class appManager {
 
     private Context currentContext;
 
+//    public Context getSyncContext() {
+//        return syncContext;
+//    }
+//
+//    public void setSyncContext(Context syncContext) {
+//        this.syncContext = syncContext;
+//    }
+//
+//    private Context syncContext;
     private appManager() {
         this.appSetupInstance = new AppSettings();
 
@@ -67,4 +77,15 @@ public class appManager {
 //            ourInstance = new appManager();
 //        }
 //    }
+
+
+    public OutletObject getActiveOutletObject() {
+        return activeOutletObject;
+    }
+
+    public void setActiveOutletObject(OutletObject activeOutletObject) {
+        this.activeOutletObject = activeOutletObject;
+    }
+
+    private  OutletObject activeOutletObject ;
 }

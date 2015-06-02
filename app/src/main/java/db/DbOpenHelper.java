@@ -58,7 +58,7 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         this.dbSettings = DbSettings.getInstance();
         String packageName = context.getPackageName();
         this.dbSettings.DB_PATH = String.format("//data//data//%s//databases//", packageName);
-        createDataBase();
+        //createDataBase();
     }
 
     @Override
@@ -82,7 +82,13 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         if (oldVersion<newVersion) {
             for (String currentScript : DbCreateScript.getDropTableScripts())
             {
-                db.execSQL(currentScript);
+               try {
+                   db.execSQL(currentScript);
+               }
+               catch (Exception e)
+                {
+
+                }
             }
             onCreate(db);
         }
