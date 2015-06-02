@@ -167,7 +167,7 @@ public class ActivityRoute extends ActionBarActivity {
         PopupMenu popupMenu = new PopupMenu(this, v);
 
         popupMenu.getMenuInflater().inflate(R.menu.popupmenu_route, popupMenu.getMenu());
-        popupMenu.getMenu().getItem(0).setTitle("Перейти к заказам: "+ outlet.outletName);
+        popupMenu.getMenu().getItem(0).setTitle("Заказы: "+ outlet.outletName);
         //popupMenu.inflate(R.menu.popupmenu_route);
 
         popupMenu
