@@ -72,7 +72,7 @@ public class ActivitySync extends ActionBarActivity {
                     case IDLI_ROUTE:
                         appManager.getOurInstance().setCurrentContext(this);
                         new syncRoute().execute(new String[]{appManager.getOurInstance().appSetupInstance.getServiceUrl(),"dictionary/getrouteset/"+appManager.getOurInstance().appSetupInstance.getRouteId()});
-                        break;
+                        break; //Add other menu items
                 }
             }
         }
