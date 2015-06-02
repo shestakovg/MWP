@@ -9,6 +9,14 @@
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
+        <TableRow>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="День визита"
+                android:textColor="#ff5a99ff"
+                android:textSize="10pt" />
+        </TableRow>
      <TableRow>
             <Spinner
                 android:id="@+id/spinnerDays"
